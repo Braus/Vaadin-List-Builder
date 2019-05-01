@@ -1,0 +1,47 @@
+<link rel="import" href="../../../../../../target/generated-resources/frontend/bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/vaadin-ordered-layout/src/vaadin-horizontal-layout.html">
+<link rel="import" href="../../bower_components/vaadin-ordered-layout/src/vaadin-vertical-layout.html">
+<link rel="import" href="../../bower_components/vaadin-button/src/vaadin-button.html">
+
+<dom-module id="list-builder-component">
+    <template>
+<style include="shared-styles">
+            :host {
+                display: block;
+            }
+        </style>
+<vaadin-horizontal-layout style="width: 100%; height: 100%;">
+ <div id="leftGridParent" style="width: 100%; min-height:270px;border: 1px solid black;"></div>
+ <vaadin-vertical-layout style="margin-top:50px;">
+  <vaadin-button id="moveEntityRight">
+   <label>&gt; </label>
+  </vaadin-button>
+  <vaadin-button id="moveAllEntitiesRight">
+   <label>&gt;&gt;</label>
+  </vaadin-button>
+  <vaadin-button id="moveEntityLeft">
+   <label>&lt;</label>
+  </vaadin-button>
+  <vaadin-button id="moveAllEntitiesLeft">
+   <label>&lt;&lt;</label>
+  </vaadin-button>
+ </vaadin-vertical-layout>
+ <div id="rightGridParent" style="width: 100%; min-height:270px;border:1px solid black;"></div>
+</vaadin-horizontal-layout>
+</template>
+
+    <script>
+        class ListBuilderComponent extends Polymer.Element {
+            static get is() {
+                return 'list-builder-component';
+            }
+
+            static get properties() {
+                return {
+                    // Declare your properties here.
+                };
+            }
+        }
+        customElements.define(ListBuilderComponent.is, ListBuilderComponent);
+    </script>
+</dom-module>
